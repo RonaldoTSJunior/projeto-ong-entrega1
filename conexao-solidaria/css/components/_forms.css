@@ -72,7 +72,8 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25); /* "Brilho" azul */
 }
 
-/* * REQUISITO: VALIDAÇÃO VISUAL
+/*
+ * REQUISITO: VALIDAÇÃO VISUAL (CSS NATIVO - ENTREGA II)
  */
 
 /* Inválido (Vermelho) */
@@ -98,4 +99,24 @@ input:not(:placeholder-shown):valid:focus {
 .form-actions {
     margin-top: var(--espaco-lg);
     text-align: right; /* Alinha o botão de submit à direita */
+}
+
+/*
+ * ===================================================
+ * ESTILOS PARA A VALIDAÇÃO JS (ENTREGA III)
+ * ===================================================
+ */
+
+/* A div de mensagem de erro que o 'validation.js' cria */
+.form-error-message {
+    color: var(--cor-alerta);
+    font-size: var(--fonte-sm);
+    font-weight: 500;
+    margin-top: var(--espaco-xs);
+}
+
+/* Classe que o 'validation.js' adiciona ao input */
+input.is-invalid {
+    border-color: var(--cor-alerta) !important; /* !important para sobrescrever o CSS nativo :valid */
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25) !important;
 }
