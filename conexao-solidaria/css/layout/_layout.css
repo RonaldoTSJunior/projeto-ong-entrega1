@@ -1,0 +1,71 @@
+/* css/layout/_layout.css */
+
+/*
+ * Usando CSS Grid para a estrutura GERAL (Requisito)
+ * Isso força o rodapé a ficar no fim da página, mesmo com pouco conteúdo.
+ */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Cabeçalho, Conteúdo (flexível), Rodapé */
+    min-height: 100vh;
+}
+
+/*
+ * Header
+ * (Estava no _header.css, agora está aqui)
+ */
+.main-header {
+    background: var(--cor-neutra-white);
+    box-shadow: var(--box-shadow);
+    padding: var(--espaco-sm) var(--espaco-md);
+    
+    /* Flexbox para alinhar o logo e a nav (Requisito) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Cabeçalho fixo */
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .logo img {
+    max-height: 40px; /* Controla o tamanho do logo */
+    width: auto;
+}
+
+/*
+ * Footer
+ * (Estava no _footer.css, agora está aqui)
+ */
+.main-footer {
+    background: var(--cor-neutra-dark);
+    color: var(--cor-neutra-light);
+    padding: var(--espaco-lg) 0;
+    margin-top: var(--espaco-xl); /* Empurra o rodapé para baixo */
+}
+
+.main-footer p {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: var(--fonte-sm);
+}
+
+/*
+ * Sidebar (Caixa de Contato)
+ */
+.sidebar-box {
+    background: var(--cor-neutra-light);
+    padding: var(--espaco-md);
+    border-radius: var(--border-radius);
+    border: 1px solid #eee;
+}
+.sidebar-box h3 {
+    font-size: var(--fonte-lg);
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: var(--espaco-xs);
+    margin-bottom: var(--espaco-sm);
+}
+.sidebar-box address {
+    font-style: normal;
+    line-height: 1.7;
+}

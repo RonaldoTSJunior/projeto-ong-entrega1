@@ -1,0 +1,35 @@
+/* css/pages/_home.css */
+
+.hero-banner {
+    /* Usa a imagem 'banner-home.jpg' como fundo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../imagens/banner-home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    padding: var(--espaco-xxl) 0;
+    
+    display: flex;
+    align-items: center;
+    min-height: 45vh; /* Altura do banner */
+}
+
+.hero-banner h1 {
+    color: var(--cor-neutra-white);
+    font-size: 3.5rem; /* Fonte maior para o hero */
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para legibilidade */
+    margin-bottom: 0;
+    max-width: 800px; /* Limita a largura do texto */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 30vh;
+        padding: var(--espaco-xl) 0;
+    }
+    .hero-banner h1 {
+        font-size: var(--fonte-xxl); /* Usa o H1 padrão (menor) */
+    }
+}

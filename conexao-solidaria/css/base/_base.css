@@ -1,0 +1,59 @@
+/* css/base/_base.css */
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--fonte-md);
+    line-height: 1.6;
+    color: var(--cor-neutra-dark);
+    background-color: var(--cor-neutra-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--espaco-md);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 { font-size: var(--fonte-xxl); }
+h2 { font-size: var(--fonte-xl); }
+h3 { font-size: var(--fonte-lg); }
+
+p {
+    margin-bottom: var(--espaco-sm);
+}
+
+a {
+    color: var(--cor-primaria);
+    transition: var(--transition-base);
+}
+
+a:hover {
+    color: var(--cor-primaria-dark);
+    text-decoration: underline;
+}
+
+/* Classes de Utilidade */
+.section-padding {
+    padding-top: var(--espaco-xl);
+    padding-bottom: var(--espaco-xl);
+}
+
+.section-light {
+    background-color: var(--cor-neutra-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--cor-neutra-medium);
+    margin-bottom: var(--espaco-lg);
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}

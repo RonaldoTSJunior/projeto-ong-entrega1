@@ -3,63 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conheça nossos projetos sociais e saiba como você pode ajudar sendo voluntário ou fazendo uma doação.">
-    <title>Projetos - Conexão Solidária</title>
+    <meta name="description" content="Conexão Solidária - Transformando vidas...">
+    <title>Conexão Solidária</title> <link rel="stylesheet" href="css/base/_reset.css">
+    <link rel="stylesheet" href="css/base/_variables.css">
+    <link rel="stylesheet" href="css/base/_base.css">
+    
+    <link rel="stylesheet" href="css/layout/_grid.css">
+    <link rel="stylesheet" href="css/layout/_layout.css">
+    
+    <link rel="stylesheet" href="css/components/_navigation.css">
+    <link rel="stylesheet" href="css/components/_buttons.css">
+    <link rel="stylesheet" href="css/components/_cards.css">
+    <link rel="stylesheet" href="css/components/_forms.css">
+    <link rel="stylesheet" href="css/components/_feedback.css">
+    
+    <link rel="stylesheet" href="css/pages/_home.css">
+    <link rel="stylesheet" href="css/pages/_pages.css">
 </head>
 <body>
 
-    <header>
-        <a href="index.html">
-            <img src="imagens/logo-conexao-solidaria.png" alt="Logo da ONG Conexão Solidária" width="250">
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <img src="imagens/logo-conexao-solidaria.png" alt="Logo da ONG Conexão Solidária">
         </a>
-        <nav>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Participe</a></li>
+                <li class="dropdown">
+                    <a href="projetos.html" class="active">Projetos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#projetos">Em Andamento</a></li>
+                        <li><a href="#ajudar">Como Ajudar</a></li>
+                    </ul>
+                </li>
+                <li><a href="cadastro.html" class="btn btn-primary">Participe</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Nossos Projetos e Formas de Ajudar</h1>
+
+        <section class="page-header" style="background-image: url('imagens/imagem-projetos.jpg');">
+            <div class="container">
+                <h1>Nossos Projetos e Formas de Ajudar</h1>
+            </div>
+        </section>
+
+        <section id="projetos" class="section-padding">
+            <div class="container">
+                <h2 class="text-center">Projetos em Andamento</h2>
+                
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <img src="imagens/imagem-projetos.jpg" alt="Educação para o Futuro" class="card-image">
+                            <div class="card-content">
+                                <h3>Educação para o Futuro</h3>
+                                <p>Aulas de reforço escolar e oficinas de tecnologia para crianças e adolescentes.</p>
+                                <p><span class="badge badge-primary">Educação</span> <span class="badge badge-secondary">Tecnologia</span></p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-secondary">Saiba Mais</a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <img src="imagens/imagem-cadastro.jpg" alt="Prato Cheio" class="card-image">
+                            <div class="card-content">
+                                <h3>Prato Cheio</h3>
+                                <p>Distribuição de refeições diárias para pessoas em situação de vulnerabilidade.</p>
+                                <p><span class="badge badge-secondary">Alimentação</span></p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-secondary">Saiba Mais</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="card">
+                            <img src="imagens/banner-home.jpg" alt="Saúde na Comunidade" class="card-image">
+                            <div class="card-content">
+                                <h3>Saúde na Comunidade</h3>
+                                <p>Atendimentos médicos e odontológicos gratuitos para a população local.</p>
+                                <p><span class="badge badge-primary">Saúde</span></p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-secondary">Saiba Mais</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <img src="imagens/imagem-projetos.jpg" alt="Ilustração abstrata simbolizando crescimento e impacto social" width="800">
-
-        <section aria-labelledby="projetos-titulo">
-            <h2 id="projetos-titulo">Projetos em Andamento</h2>
-
-            <article>
-                <h3>Educação para o Futuro</h3>
-                <p>O projeto oferece aulas de reforço escolar e oficinas de tecnologia para crianças e adolescentes...</p>
-                <p>Impacto: +200 alunos atendidos em 2024.</p>
-            </article>
-
-            <article>
-                <h3>Prato Cheio</h3>
-                <p>Distribuição de refeições diárias para pessoas em situação de vulnerabilidade social...</p>
-                <p>Impacto: +10.000 refeições distribuídas por mês.</p>
-            </article>
-        </section>
-
-        <section aria-labelledby="ajudar-titulo">
-            <h2 id="ajudar-titulo">Como Ajudar</h2>
-
-            <div>
-                <h3>Seja Voluntário</h3>
-                <p>Temos vagas abertas para diversas áreas! Para participar, <a href="cadastro.html">preencha seu cadastro</a>.</p>
-            </div>
-
-            <div>
-                <h3>Faça uma Doação</h3>
-                <p>Sua doação se transforma diretamente em comida no prato e livros na mão de quem precisa.</p>
-                <p>Doe através do nosso PIX: 99.999.999/9999-99</p>
+        <section id="ajudar" class="section-padding section-light">
+            <div class="container">
+                <h2 class="text-center">Como Ajudar</h2>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <h3>Seja Voluntário</h3>
+                        <p>Temos vagas abertas para diversas áreas! Seu tempo e talento fazem a diferença.</p>
+                        <a href="cadastro.html" class="btn btn-primary">Preencher Cadastro</a>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <h3>Faça uma Doação</h3>
+                        <p>Sua doação se transforma em comida, livros e saúde para quem precisa.</p>
+                        <p><strong>PIX (CNPJ): 12.345.678/0001-99</strong></p>
+                    </div>
+                </div>
             </div>
         </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 Conexão Solidária. Todos os direitos reservados.</p>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Conexão Solidária. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
 </body>

@@ -3,113 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cadastre-se para ser voluntário ou doador da Conexão Solidária.">
-    <title>Cadastro - Conexão Solidária</title>
+    <meta name="description" content="Conexão Solidária - Transformando vidas...">
+    <title>Conexão Solidária</title> <link rel="stylesheet" href="css/base/_reset.css">
+    <link rel="stylesheet" href="css/base/_variables.css">
+    <link rel="stylesheet" href="css/base/_base.css">
+    
+    <link rel="stylesheet" href="css/layout/_grid.css">
+    <link rel="stylesheet" href="css/layout/_layout.css">
+    
+    <link rel="stylesheet" href="css/components/_navigation.css">
+    <link rel="stylesheet" href="css/components/_buttons.css">
+    <link rel="stylesheet" href="css/components/_cards.css">
+    <link rel="stylesheet" href="css/components/_forms.css">
+    <link rel="stylesheet" href="css/components/_feedback.css">
+    
+    <link rel="stylesheet" href="css/pages/_home.css">
+    <link rel="stylesheet" href="css/pages/_pages.css">
 </head>
 <body>
 
-    <header>
-        <a href="index.html">
-            <img src="imagens/logo-conexao-solidaria.png" alt="Logo da ONG Conexão Solidária" width="250">
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <img src="imagens/logo-conexao-solidaria.png" alt="Logo da ONG Conexão Solidária">
         </a>
-        <nav>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Participe</a></li>
+                <li class="dropdown">
+                    <a href="projetos.html">Projetos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projetos.html#projetos">Em Andamento</a></li>
+                        <li><a href="projetos.html#ajudar">Como Ajudar</a></li>
+                    </ul>
+                </li>
+                <li><a href="cadastro.html" class="btn btn-primary active">Participe</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Participe (Cadastro de Voluntários e Doadores)</h1>
-        
-        <img src="imagens/imagem-cadastro.jpg" alt="Ilustração abstrata simbolizando novas conexões e oportunidades" width="600">
 
-        <p>Preencha o formulário abaixo para começar sua jornada conosco.</p>
+        <section class="page-header" style="background-image: url('imagens/imagem-cadastro.jpg');">
+            <div class="container">
+                <h1>Participe (Cadastro de Voluntários e Doadores)</h1>
+            </div>
+        </section>
 
-        <form action="/processar-cadastro" method="post">
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8 mx-auto">
+                        
+                        <p class="text-center lead-text">Preencha o formulário abaixo para começar sua jornada conosco. Campos marcados com * são obrigatórios.</p>
 
-            <fieldset>
-                <legend>Dados Pessoais</legend>
+                        <form action="/processar-cadastro" method="post">
 
-                <div>
-                    <label for="nome">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome_completo" required minlength="3">
-                </div>
-                <br>
-                <div>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <br>
-                <div>
-                    <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" name="cpf" 
-                           pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-                           placeholder="123.456.789-00" 
-                           title="Digite um CPF no formato 123.456.789-00" 
-                           required>
-                </div>
-                <br>
-                <div>
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" 
-                           pattern="\(\d{2}\) \d{4,5}-\d{4}" 
-                           placeholder="(11) 98765-4321" 
-                           title="Digite um telefone no formato (XX) XXXXX-XXXX" 
-                           required>
-                </div>
-                <br>
-                <div>
-                    <label for="nascimento">Data de Nascimento:</label>
-                    <input type="date" id="nascimento" name="data_nascimento" required>
-                </div>
+                            <fieldset>
+                                <legend>Dados Pessoais</legend>
 
-            </fieldset>
+                                <div class="form-group">
+                                    <div>
+                                        <label for="nome">Nome Completo *</label>
+                                        <input type="text" id="nome" name="nome_completo" required minlength="3" placeholder="Seu nome completo">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group grid-2">
+                                    <div>
+                                        <label for="email">E-mail *</label>
+                                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                                    </div>
+                                    <div>
+                                        <label for="nascimento">Data de Nascimento *</label>
+                                        <input type="date" id="nascimento" name="data_nascimento" required>
+                                    </div>
+                                </div>
 
-            <fieldset>
-                <legend>Endereço</legend>
+                                <div class="form-group grid-2">
+                                    <div>
+                                        <label for="cpf">CPF *</label>
+                                        <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="123.456.789-00" title="Digite no formato XXX.XXX.XXX-XX" required>
+                                    </div>
+                                    <div>
+                                        <label for="telefone">Telefone *</label>
+                                        <input type="tel" id="telefone" name="telefone" pattern="\(\d{2}\) \d{4,5}-\d{4}" placeholder="(11) 98765-4321" title="Digite no formato (XX) XXXXX-XXXX" required>
+                                    </div>
+                                </div>
+                            </fieldset>
 
-                <div>
-                    <label for="cep">CEP:</label>
-                    <input type="text" id="cep" name="cep" 
-                           pattern="\d{5}-\d{3}" 
-                           placeholder="12345-000" 
-                           title="Digite um CEP no formato 12345-000" 
-                           required>
-                </div>
-                <br>
-                <div>
-                    <label for="endereco">Endereço (Rua, N°):</label>
-                    <input type="text" id="endereco" name="endereco" required>
-                </div>
-                <br>
-                <div>
-                    <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" name="cidade" required>
-                </div>
-                <br>
-                <div>
-                    <label for="estado">Estado:</label>
-                    <select id="estado" name="estado" required>
-                        <option value="">Selecione...</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="MG">Minas Gerais</option>
-                    </select>
-                </div>
+                            <fieldset>
+                                <legend>Endereço</legend>
+                                
+                                <div class="form-group grid-2">
+                                    <div>
+                                        <label for="cep">CEP *</label>
+                                        <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" placeholder="12345-000" title="Digite no formato XXXXX-XXX" required>
+                                    </div>
+                                    <div>
+                                        <label for="endereco">Endereço (Rua, N°) *</label>
+                                        <input type="text" id="endereco" name="endereco" required placeholder="Ex: Rua da Esperança, 123">
+                                    </div>
+                                </div>
 
-            </fieldset>
-            
-            <br>
-            <button type="submit">Enviar Cadastro</button>
+                                <div class="form-group grid-2">
+                                    <div>
+                                        <label for="cidade">Cidade *</label>
+                                        <input type="text" id="cidade" name="cidade" required placeholder="São Paulo">
+                                    </div>
+                                    <div>
+                                        <label for="estado">Estado *</label>
+                                        <select id="estado" name="estado" required>
+                                            <option value="">Selecione...</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="MG">Minas Gerais</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+                            </div>
 
-        </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2025 Conexão Solidária. Todos os direitos reservados.</p>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Conexão Solidária. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
 </body>

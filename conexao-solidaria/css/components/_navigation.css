@@ -1,0 +1,161 @@
+/* css/components/_navigation.css */
+
+/* Esconde o checkbox real */
+.menu-toggle {
+    display: none; 
+}
+
+/* Ícone do Hambúrguer (só aparece no mobile) */
+.menu-icon {
+    display: none; 
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--cor-neutra-dark);
+    padding: 0 var(--espaco-xs);
+}
+
+/* NAV PRINCIPAL (Desktop) */
+.main-nav ul {
+    display: flex; 
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: var(--espaco-sm);
+}
+
+.main-nav a {
+    font-size: var(--fonte-md);
+    font-weight: 500;
+    color: var(--cor-neutra-medium);
+    text-decoration: none;
+    padding: var(--espaco-xs) var(--espaco-sm);
+    border-radius: var(--border-radius);
+    transition: var(--transition-base);
+}
+
+.main-nav a:hover,
+.main-nav a.active { 
+    color: var(--cor-neutra-dark);
+    background-color: var(--cor-neutra-light);
+    text-decoration: none;
+}
+
+.main-nav .btn {
+    padding: var(--espaco-xs) var(--espaco-md);
+}
+
+/* Dropdown (Requisito) */
+.dropdown {
+    position: relative; 
+}
+
+.dropdown-menu {
+    /*
+     * CORREÇÃO NUCLEAR 1:
+     * Força o menu a estar escondido por padrão.
+     */
+    display: none !important; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--cor-neutra-white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    min-width: 200px;
+    padding: var(--espaco-xs) 0;
+    z-index: 1001;
+}
+
+/*
+ * LÓGICA DO DESKTOP:
+ * Mostra o menu no hover do desktop.
+ */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        /*
+         * CORREÇÃO NUCLEAR 2:
+         * Força o menu a APARECER no hover do desktop.
+         */
+        display: block !important;
+    }
+}
+
+
+.dropdown-menu li {
+    margin-left: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    width: 100%;
+    padding: var(--espaco-sm);
+}
+
+/*
+ * MENU RESPONSIVO (Breakpoints!)
+ * (Usando 991px como ponto de corte)
+ */
+@media (max-width: 991px) {
+    
+    .menu-icon {
+        display: block;
+    }
+
+    .main-nav {
+        display: none !important; /* Esconde a nav no mobile por padrão */
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background: var(--cor-neutra-white);
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        border-top: 1px solid #eee;
+    }
+
+    /* O 'truque': quando o checkbox tá marcado, mostra a nav */
+    .menu-toggle:checked ~ .main-nav {
+        display: block !important; /* FORÇA a nav a aparecer */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: stretch; 
+        padding: var(--espaco-sm) 0;
+    }
+
+    .main-nav li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: var(--espaco-md);
+        text-align: left;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    /*
+     * LÓGICA DO MOBILE:
+     * O dropdown-menu no mobile deve ser 'display: block'
+     * para aparecer JUNTO com o menu principal (que está escondido).
+     */
+    .dropdown-menu {
+        /*
+         * CORREÇÃO NUCLEAR 3:
+         * Força o menu a ser um bloco estático no fluxo mobile.
+         */
+        display: block !important; 
+        position: static !important; 
+        box-shadow: none !important;
+        background: var(--cor-neutra-light) !important;
+        min-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .dropdown-menu a {
+        padding-left: var(--espaco-lg) !important; /* Indentação */
+    }
+}

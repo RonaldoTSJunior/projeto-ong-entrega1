@@ -1,0 +1,38 @@
+/* css/base/_variables.css */
+
+:root {
+    /* 1.1. Paleta de Cores (8 cores) - Requisito */
+    --cor-primaria: #0d6efd;       /* Azul (Links, Botões) */
+    --cor-primaria-dark: #0a58ca;  /* Azul (Hover) */
+    --cor-secundaria: #198754;    /* Verde (Sucesso, Doações) */
+    --cor-secundaria-light: #d1e7dd; /* Verde Claro (Fundo Alert) */
+    
+    --cor-alerta: #dc3545;        /* Vermelho (Erro, Validação) */
+    
+    --cor-neutra-dark: #212529;    /* Preto (Texto) */
+    --cor-neutra-medium: #6c757d;  /* Cinza (Subtexto) */
+    --cor-neutra-light: #f8f9fa;   /* Cinza Claro (Fundos) */
+    --cor-neutra-white: #ffffff;   /* Branco */
+
+    /* 1.2. Tipografia (5 tamanhos) - Requisito */
+    --fonte-xxl: 2.5rem;   /* ~40px (H1) */
+    --fonte-xl:  2.0rem;   /* ~32px (H2) */
+    --fonte-lg:  1.5rem;   /* ~24px (H3) */
+    --fonte-md:  1rem;     /* ~16px (Corpo - Padrão) */
+    --fonte-sm:  0.875rem; /* ~14px (Pequeno, legendas) */
+    
+    --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* 1.3. Espaçamento Modular (6 tamanhos) - Requisito */
+    --espaco-xs: 0.5rem;   /* 8px */
+    --espaco-sm: 1rem;     /* 16px */
+    --espaco-md: 1.5rem;   /* 24px */
+    --espaco-lg: 2rem;     /* 32px */
+    --espaco-xl: 3rem;     /* 48px */
+    --espaco-xxl: 4rem;    /* 64px */
+
+    /* 1.4. Outros */
+    --border-radius: 0.375rem; /* 6px */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --transition-base: 0.2s ease-in-out;
+}

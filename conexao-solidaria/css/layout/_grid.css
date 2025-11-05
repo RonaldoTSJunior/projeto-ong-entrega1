@@ -1,0 +1,66 @@
+/* css/layout/_grid.css */
+
+/* * O .container define a largura máxima do site.
+ */
+.container {
+    width: 100%;
+    max-width: 1140px; /* Largura padrão de desktop */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--espaco-md);
+    padding-right: var(--espaco-md);
+}
+
+/* * O .row usa Flexbox para criar as linhas.
+ */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Gutter (espaçamento entre colunas) */
+    margin-left: calc(var(--espaco-md) * -0.5);
+    margin-right: calc(var(--espaco-md) * -0.5);
+}
+
+/* * As [class*='col-'] são as colunas.
+ * Mobile-first: Por padrão, ocupam 100% da largura.
+ */
+[class*='col-'] {
+    width: 100%;
+    padding-left: calc(var(--espaco-md) * 0.5);
+    padding-right: calc(var(--espaco-md) * 0.5);
+    margin-bottom: var(--espaco-md); /* Espaçamento vertical entre colunas no mobile */
+}
+
+
+/* * BREAKPOINTS RESPONSIVOS (Requisito)
+ * sm (576px), md (768px), lg (992px), xl (1200px) - 4 dos 5 pedidos
+ */
+
+/* Medium devices (Tablets, 768px e acima) */
+@media (min-width: 768px) {
+    .col-md-6 { width: 50%; }
+    .col-md-4 { width: 33.3333%; }
+    /* ... (pode adicionar .col-md-1 até .col-md-12) */
+}
+
+/* Large devices (Desktops, 992px e acima) */
+@media (min-width: 992px) {
+    [class*='col-'] {
+        margin-bottom: 0; /* Remove o espaçamento vertical no desktop */
+    }
+    .col-lg-3 { width: 25%; }
+    .col-lg-4 { width: 33.3333%; }
+    .col-lg-6 { width: 50%; }
+    .col-lg-8 { width: 66.6666%; }
+    .col-lg-10 { width: 83.3333%; }
+    /* ... */
+}
+
+/* Extra large devices (Desktops maiores, 1200px e acima) */
+@media (min-width: 1200px) {
+    .col-xl-8 { width: 66.6666%; }
+    /* ... */
+}
+
+/* Coluna genérica de 100% */
+.col-12 { width: 100%; }

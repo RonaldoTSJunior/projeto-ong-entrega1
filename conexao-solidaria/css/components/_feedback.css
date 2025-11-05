@@ -1,0 +1,78 @@
+/* css/components/_feedback.css */
+
+/*
+ * Badges e Tags (Requisito)
+ * Uso: <span class="badge badge-primary">Novo</span>
+ */
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: var(--fonte-sm);
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: var(--border-radius);
+}
+
+.badge-primary {
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra-white);
+}
+
+.badge-secondary {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-neutra-white);
+}
+
+/*
+ * Alerts (Requisito)
+ */
+.alert {
+    padding: var(--espaco-md);
+    margin-bottom: var(--espaco-sm);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+}
+
+.alert-success {
+    color: #0f5132;
+    background-color: var(--cor-secundaria-light);
+    border-color: #badbcc;
+}
+
+.alert-danger {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+/*
+ * Modal & Toast (Requisito - Estilos Base)
+ * (Precisariam de JS para funcionar, mas o CSS está pronto)
+ */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--cor-neutra-white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    z-index: 2001;
+}
+
+/* ... (O resto dos estilos do modal: .modal-header, .modal-body, etc.) ... */

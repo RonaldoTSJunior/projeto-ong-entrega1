@@ -1,0 +1,50 @@
+/* css/components/_cards.css */
+
+.card {
+    background: var(--cor-neutra-white);
+    border: 1px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden; /* Pra imagem não vazar */
+    height: 100%; /* Garante altura igual no grid */
+    transition: var(--transition-base);
+    
+    /* Flexbox para organizar o conteúdo do card (Requisito) */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Faz a imagem cobrir a área */
+}
+
+.card-content {
+    padding: var(--espaco-md);
+    
+    /* flex-grow faz o conteúdo crescer e empurrar o footer pra baixo */
+    flex-grow: 1; 
+}
+
+.card-content h3 {
+    margin-top: 0;
+    font-size: var(--fonte-lg);
+}
+
+.card-content p {
+    font-size: var(--fonte-md);
+    color: var(--cor-neutra-medium);
+    margin-bottom: var(--espaco-sm);
+}
+
+.card-footer {
+    padding: var(--espaco-md);
+    border-top: 1px solid #eee;
+    background: var(--cor-neutra-light);
+}

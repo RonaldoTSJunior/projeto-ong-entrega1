@@ -1,0 +1,61 @@
+/* css/components/_buttons.css */
+
+.btn {
+    display: inline-block;
+    padding: var(--espaco-sm) var(--espaco-lg);
+    font-size: var(--fonte-md);
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    transition: var(--transition-base);
+}
+
+/* --- Botão Primário (Azul) --- */
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra-white);
+    border-color: var(--cor-primaria);
+}
+
+/* ESTADOS (Requisito) */
+.btn-primary:hover {
+    background-color: var(--cor-primaria-dark);
+    border-color: var(--cor-primaria-dark);
+    color: var(--cor-neutra-white);
+    text-decoration: none;
+}
+
+.btn-primary:focus, 
+.btn-primary:focus-visible { /* Acessibilidade */
+    outline: 4px auto var(--cor-primaria-dark);
+    outline-offset: 1px;
+}
+
+.btn-primary:active {
+    background-color: #0a53b0; /* Ainda mais escuro */
+}
+
+.btn-primary:disabled { /* Estado desabilitado */
+    background-color: var(--cor-neutra-medium);
+    border-color: var(--cor-neutra-medium);
+    cursor: not-allowed;
+}
+
+/* --- Botão Secundário (Verde) --- */
+/* (Útil para os cards) */
+.btn-secondary {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-neutra-white);
+    border-color: var(--cor-secundaria);
+}
+
+.btn-secondary:hover {
+    background-color: #157347;
+    border-color: #146c43;
+    color: var(--cor-neutra-white);
+    text-decoration: none;
+}

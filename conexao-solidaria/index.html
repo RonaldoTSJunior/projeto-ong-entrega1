@@ -3,67 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conexão Solidária - Transformando vidas através de projetos sociais. Conheça, doe, seja voluntário.">
-    <title>Conexão Solidária - Página Inicial</title>
+    <meta name="description" content="Conexão Solidária - Transformando vidas...">
+    <title>Conexão Solidária</title> <link rel="stylesheet" href="css/base/_reset.css">
+    <link rel="stylesheet" href="css/base/_variables.css">
+    <link rel="stylesheet" href="css/base/_base.css">
+    
+    <link rel="stylesheet" href="css/layout/_grid.css">
+    <link rel="stylesheet" href="css/layout/_layout.css">
+    
+    <link rel="stylesheet" href="css/components/_navigation.css">
+    <link rel="stylesheet" href="css/components/_buttons.css">
+    <link rel="stylesheet" href="css/components/_cards.css">
+    <link rel="stylesheet" href="css/components/_forms.css">
+    <link rel="stylesheet" href="css/components/_feedback.css">
+    
+    <link rel="stylesheet" href="css/pages/_home.css">
+    <link rel="stylesheet" href="css/pages/_pages.css">
 </head>
 <body>
 
-    <header>
-        <a href="index.html">
-            <img src="imagens/logo-conexao-solidaria.png" alt="Logo da ONG Conexão Solidária" width="250">
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <img src="imagens/logo-conexao-solidaria.png" alt="Logo da ONG Conexão Solidária">
         </a>
         
-        <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label> 
+
+        <nav class="main-nav">
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Participe</a></li>
+                <li><a href="index.html" class="active">Início</a></li>
+                
+                <li class="dropdown">
+                    <a href="projetos.html">Projetos</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projetos.html#projetos">Em Andamento</a></li>
+                        <li><a href="projetos.html#ajudar">Como Ajudar</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="cadastro.html" class="btn btn-primary">Participe</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Conectando boas ações, transformando vidas</h1>
         
-        <figure>
-            <img src="imagens/banner-home.jpg" alt="Fundo abstrato com formas suaves simbolizando conexão e esperança" width="800">
-            <figcaption>Nossa missão é levar esperança e oportunidade.</figcaption>
-        </figure>
+        <section class="hero-banner">
+            <div class="container">
+                <h1>Conectando boas ações, transformando vidas</h1>
+            </div>
+        </section>
 
-        <section aria-labelledby="sobre-titulo">
-            <h2 id="sobre-titulo">Sobre a Conexão Solidária</h2>
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <section aria-labelledby="sobre-titulo">
+                            <h2 id="sobre-titulo">Sobre a Conexão Solidária</h2>
             
-            <p>Fundada em 2023, a Conexão Solidária nasceu do sonho de usar a tecnologia para criar pontes diretas entre quem quer ajudar e quem precisa de apoio imediato, encurtando distâncias e burocracias.</p>
+                            <p>Fundada em 2023, a Conexão Solidária nasceu do sonho de usar a tecnologia para criar pontes diretas entre quem quer ajudar e quem precisa de apoio imediato, encurtando distâncias e burocracias.</p>
 
-            <h3>Nossa Missão</h3>
-            <p>Conectar pessoas, recursos e oportunidades de forma transparente e eficiente, promovendo o desenvolvimento social e combatendo a desigualdade, com foco na educação e segurança alimentar.</p>
+                            <h3>Nossa Missão</h3>
+                            <p>Conectar pessoas, recursos e oportunidades de forma transparente e eficiente, promovendo o desenvolvimento social e combatendo a desigualdade, com foco na educação e segurança alimentar.</p>
 
-            <h3>Nossa Visão</h3>
-            <p>Ser a principal referência no Brasil como plataforma de voluntariado e doação, reconhecida pela inovação tecnológica, transparência total e pelo impacto real na vida das pessoas.</p>
+                            <h3>Nossa Visão</h3>
+                            <p>Ser a principal referência no Brasil como plataforma de voluntariado e doação, reconhecida pela inovação tecnológica, transparência total e pelo impacto real na vida das pessoas.</p>
 
-            <h3>Nossos Valores</h3>
-            <ul>
-                <li><strong>Transparência:</strong> Prestação de contas aberta.</li>
-                <li><strong>Empatia:</strong> Colocar-se no lugar do outro.</li>
-                <li><strong>Agilidade:</strong> Respostas rápidas às necessidades sociais.</li>
-                <li><strong>Conexão:</strong> União de esforços para gerar transformação.</li>
-                <li><strong>Inovação:</strong> Tecnologia como ferramenta de impacto social.</li>
-            </ul>
+                            <h3>Nossos Valores</h3>
+                            <ul>
+                                <li><strong>Transparência:</strong> Prestação de contas aberta.</li>
+                                <li><strong>Empatia:</strong> Colocar-se no lugar do outro.</li>
+                                <li><strong>Agilidade:</strong> Respostas rápidas às necessidades sociais.</li>
+                                <li><strong>Conexão:</strong> União de esforços para gerar transformação.</li>
+                                <li><strong>Inovação:</strong> Tecnologia como ferramenta de impacto social.</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                        <aside class="sidebar-box">
+                            <section aria-labelledby="contato-titulo">
+                                <h3 id="contato-titulo">Informações de Contato</h3>
+                                <address>
+                                    Rua da Esperança, 123 - Centro<br>
+                                    São Paulo - SP<br>
+                                    CEP: 01000-000<br>
+                                    Email: <a href="mailto:contato@conexaosolidaria.org">contato@conexaosolidaria.org</a>
+                                </address>
+                            </section>
+                        </aside>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section aria-labelledby="contato-titulo">
-            <h2 id="contato-titulo">Informações de Contato</h2>
-            <address>
-                Avenida Brasil, 123 - Centro<br>
-                Passo Fundo - RS<br>
-                CEP: 01000-000<br>
-                Email: <a href="mailto:contato@conexaosolidaria.org">contato@conexaosolidaria.org</a>
-            </address>
-        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Conexão Solidária. Todos os direitos reservados.</p>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Conexão Solidária. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
 </body>
