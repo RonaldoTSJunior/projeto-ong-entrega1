@@ -1,0 +1,63 @@
+/* css/base/_dark-mode.css */
+
+/* * Quando a tag <html> tiver o atributo [data-theme="dark"], 
+ * essas variáveis vão SOBRESCREVER as do _variables.css
+ */
+[data-theme="dark"] {
+    /* Cores de Fundo (Invertidas) */
+    --cor-neutra-white: #121212; /* Fundo principal (preto) */
+    --cor-neutra-light: #1e1e1e; /* Fundo de seções/cards (cinza escuro) */
+    
+    /* Cores de Texto (Invertidas) */
+    --cor-neutra-dark: #f1f1f1;   /* Texto principal (branco) */
+    --cor-neutra-medium: #a0a0a0; /* Subtexto (cinza claro) */
+
+    /* Cores de Destaque (Mais brilho para contraste) */
+    --cor-primaria: #4ea8ff;       /* Azul mais brilhante */
+    --cor-primaria-dark: #80bfff;
+    --cor-secundaria: #4cd964;    /* Verde mais brilhante */
+
+    /* Bordas e Sombras */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --border-color: #333333; /* Borda dos inputs */
+
+    /* ----- Estilos específicos de componentes ----- */
+
+    /* Header e Footer */
+    .main-header, .main-footer {
+        background-color: var(--cor-neutra-light);
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .main-footer {
+        border-bottom: none;
+        border-top: 1px solid var(--border-color);
+    }
+
+    /* Cards e Sidebars */
+    .card, .sidebar-box {
+        background: var(--cor-neutra-light);
+        border: 1px solid var(--border-color);
+    }
+    
+    .card-footer {
+        background: #2a2a2a;
+        border-top: 1px solid var(--border-color);
+    }
+
+    /* Formulários */
+    input, select, textarea {
+        background-color: var(--cor-neutra-white);
+        border: 1px solid var(--border-color);
+        color: var(--cor-neutra-dark);
+    }
+    
+    fieldset {
+        border-color: var(--border-color);
+    }
+    
+    /* Menu Mobile */
+    .main-nav, .dropdown-menu {
+        background: var(--cor-neutra-light);
+    }
+}

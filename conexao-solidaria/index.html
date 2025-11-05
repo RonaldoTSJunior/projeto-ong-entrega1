@@ -6,29 +6,25 @@
     <meta name="description" content="Conexão Solidária - Transformando vidas através de projetos sociais. Conheça, doe, seja voluntário.">
     <title>Conexão Solidária - SPA</title>
 
-    <link rel="stylesheet" href="css/base/_reset.css">
-    <link rel="stylesheet" href="css/base/_variables.css">
-    <link rel="stylesheet" href="css/base/_base.css">
-    <link rel="stylesheet" href="css/layout/_grid.css">
-    <link rel="stylesheet" href="css/layout/_layout.css">
-    <link rel="stylesheet" href="css/components/_navigation.css">
-    <link rel="stylesheet" href="css/components/_buttons.css">
-    <link rel="stylesheet" href="css/components/_cards.css">
-    <link rel="stylesheet" href="css/components/_forms.css">
-    <link rel="stylesheet" href="css/components/_feedback.css">
-    <link rel="stylesheet" href="css/pages/_home.css">
-    <link rel="stylesheet" href="css/pages/_pages.css">
-    </head>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
 <body>
 
-    <header class="main-header">
-        <a href="#/" class="logo"> <img src="imagens/logo-conexao-solidaria.png" alt="Logo da ONG Conexão Solidária">
+    <header class="main-header" role="banner">
+        <a href="#/" class="logo">
+            <img src="imagens/logo-conexao-solidaria.png" alt="Logo da ONG Conexão Solidária">
         </a>
         
+        <div class="theme-switcher">
+            <label for="theme-toggle">Modo Escuro</label>
+            <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+            <label for="theme-toggle" class="theme-toggle-label"></label>
+        </div>
+        
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label> 
+        <label for="menu-toggle" class="menu-icon" aria-label="Abrir ou fechar menu">&#9776;</label> 
 
-        <nav class="main-nav">
+        <nav class="main-nav" role="navigation" aria-label="Navegação principal">
             <ul>
                 <li><a href="#/" class="nav-link active">Início</a></li>
                 <li class="dropdown">
@@ -43,15 +39,15 @@
         </nav>
     </header>
 
-    <main id="app-root"></main>
+    <main id="app-root" role="main"></main>
 
-    <footer class="main-footer">
+    <footer class="main-footer" role="contentinfo">
         <div class="container">
             <p>&copy; 2025 Conexão Solidária. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/app.min.js"></script>
 
 </body>
 </html>

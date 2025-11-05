@@ -1,7 +1,9 @@
 /* js/app.js */
 import { initRouter } from './router.js';
+import { initThemeToggle } from './theme-toggle.js'; // <-- LINHA NOVA
 
-// Espera o DOM estar pronto para inicializar o roteador
+// Espera o DOM estar pronto
 document.addEventListener('DOMContentLoaded', () => {
-    initRouter();
+    initRouter();       // Inicializa o roteador (SPA)
+    initThemeToggle();  // Inicializa o toggle de Dark Mode (E-IV)
 });
