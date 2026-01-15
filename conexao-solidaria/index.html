@@ -3,51 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Conexão Solidária - Transformando vidas através de projetos sociais. Conheça, doe, seja voluntário.">
-    <title>Conexão Solidária - SPA</title>
+    <title>Conexão Solidária - Plataforma Completa</title>
 
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/base/_reset.css">
+    <link rel="stylesheet" href="css/base/_variables.css">
+    <link rel="stylesheet" href="css/base/_base.css">
+    <link rel="stylesheet" href="css/layout/_grid.css">
+    <link rel="stylesheet" href="css/layout/_layout.css">
+    <link rel="stylesheet" href="css/components/_navigation.css">
+    <link rel="stylesheet" href="css/components/_buttons.css">
+    <link rel="stylesheet" href="css/components/_cards.css">
+    <link rel="stylesheet" href="css/components/_forms.css">
+
+    <style>
+        /* VARIÁVEIS DE TEMA (CLARO/ESCURO) */
+        :root {
+            --bg-page: #ffffff;
+            --bg-card: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-input: #ffffff;
+            --text-main: #212529;
+            --text-secondary: #666666;
+            --border-color: #dee2e6;
+            --cor-primaria: #0a58ca;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* MODO ESCURO ATIVO */
+        [data-theme="dark"] {
+            --bg-page: #121212;
+            --bg-card: #1e1e1e;
+            --bg-secondary: #252525;
+            --bg-input: #2d2d2d;
+            --text-main: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --border-color: #444444;
+            --shadow: 0 4px 6px rgba(0,0,0,0.4);
+        }
+
+        /* APLICAÇÃO GLOBAL */
+        body {
+            background-color: var(--bg-page) !important;
+            color: var(--text-main) !important;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* CORREÇÃO DE INPUTS NO MODO ESCURO */
+        input, select, textarea {
+            background-color: var(--bg-input) !important;
+            color: var(--text-main) !important;
+            border: 1px solid var(--border-color) !important;
+        }
+        
+        /* CORREÇÃO DO LOGO */
+        .logo img { max-height: 45px !important; width: auto !important; display: block; }
+        
+        /* CORREÇÃO DO HEADER */
+        .main-header { 
+            background-color: var(--bg-card) !important; 
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 0;
+        }
+
+        /* FLEXBOX HELPERS */
+        .d-flex { display: flex; }
+        .justify-between { justify-content: space-between; }
+        .align-center { align-items: center; }
+        .gap-20 { gap: 20px; }
+        .w-100 { width: 100%; }
+        
+        /* GRID DE ESTATÍSTICAS */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: -50px; /* Sobrepor o banner */
+            position: relative;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body>
-
     <header class="main-header" role="banner">
-        <a href="#/" class="logo">
-            <img src="imagens/logo-conexao-solidaria.png" alt="Logo da ONG Conexão Solidária">
-        </a>
-        
-        <div class="theme-switcher">
-            <label for="theme-toggle">Modo Escuro</label>
-            <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
-            <label for="theme-toggle" class="theme-toggle-label"></label>
-        </div>
-        
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-icon" aria-label="Abrir ou fechar menu">&#9776;</label> 
+        <div class="container d-flex justify-between align-center">
+            <a href="#/" class="logo">
+                <img src="imagens/logo-conexao-solidaria.png" alt="Logo Conexão Solidária">
+            </a>
+            
+            <div class="d-flex align-center gap-20">
+                <div class="theme-switcher d-flex align-center">
+                    <label for="theme-toggle" style="margin-right: 8px; font-size: 0.9rem; cursor: pointer;">Modo Escuro</label>
+                    <input type="checkbox" id="theme-toggle" style="cursor: pointer;">
+                </div>
 
-        <nav class="main-nav" role="navigation" aria-label="Navegação principal">
-            <ul>
-                <li><a href="#/" class="nav-link active">Início</a></li>
-                <li class="dropdown">
-                    <a href="#/projetos" class="nav-link">Projetos</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/projetos#projetos">Em Andamento</a></li>
-                        <li><a href="#/projetos#ajudar">Como Ajudar</a></li>
+                <nav class="main-nav" role="navigation">
+                    <ul class="d-flex gap-20" style="list-style: none; margin: 0; padding: 0;">
+                        <li><a href="#/" class="nav-link">Início</a></li>
+                        <li><a href="#/projetos" class="nav-link">Projetos</a></li>
+                        <li><a href="#/cadastro" class="nav-link btn btn-primary" style="color: white !important;">Participe</a></li>
                     </ul>
-                </li>
-                <li><a href="#/cadastro" class="btn btn-primary nav-link">Participe</a></li>
-            </ul>
-        </nav>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <main id="app-root" role="main"></main>
+    <main id="app-root" role="main" style="min-height: 80vh;"></main>
 
-    <footer class="main-footer" role="contentinfo">
-        <div class="container">
-            <p>&copy; 2025 Conexão Solidária. Todos os direitos reservados.</p>
+    <footer class="main-footer" style="background-color: #1a1a1a; color: white; padding: 40px 0; margin-top: auto;">
+        <div class="container" style="text-align: center;">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Conexão Solidária</h3>
+                    <p style="color: #ccc; margin: 10px 0;">Tecnologia transformando realidades.</p>
+                </div>
+            </div>
+            <hr style="border-color: #333; margin: 20px 0;">
+            <p>&copy; 2025 Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script type="module" src="js/app.min.js"></script>
-
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

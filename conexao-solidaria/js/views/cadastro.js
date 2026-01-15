@@ -1,92 +1,104 @@
-/* js/views/cadastro.js */
-
-export function cadastroTemplate() {
+export function cadastroView() {
     return `
-        <section class="page-header" style="background-image: url('imagens/imagem-cadastro.jpg');">
+        <section class="hero-banner" style="
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1920&auto=format&fit=crop'); 
+            background-size: cover; 
+            background-position: center; 
+            padding: 80px 0; 
+            text-align: center; 
+            color: white;">
             <div class="container">
-                <h1>Participe (Cadastro de Voluntários e Doadores)</h1>
+                <h1 style="font-size: 2.8rem; margin-bottom: 10px; color: white;">Cadastro Completo</h1>
+                <p style="font-size: 1.2rem; color: #f0f0f0;">Preencha seus dados para acessar todas as funcionalidades.</p>
             </div>
         </section>
 
-        <section class="section-padding">
+        <section class="section-padding" style="padding: 60px 0; background-color: var(--bg-secondary);">
             <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-8 mx-auto">
+                <div class="card" style="max-width: 900px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 15px; box-shadow: var(--shadow); border: 1px solid var(--border-color);">
+                    
+                    <form id="cadastro-completo">
+                        <h3 style="color: var(--cor-primaria); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">1. Dados Pessoais</h3>
                         
-                        <p class="text-center lead-text">Preencha o formulário abaixo para começar sua jornada conosco. Campos marcados com * são obrigatórios.</p>
-
-                        <form id="main-form" action="#" method="post">
-
-                            <fieldset>
-                                <legend>Dados Pessoais</legend>
-
-                                <div class="form-group">
-                                    <div>
-                                        <label for="nome">Nome Completo *</label>
-                                        <input type="text" id="nome" name="nome_completo" required minlength="3" placeholder="Seu nome completo">
-                                        </div>
-                                </div>
-                                
-                                <div class="form-group grid-2">
-                                    <div>
-                                        <label for="email">E-mail *</label>
-                                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
-                                    </div>
-                                    <div>
-                                        <label for="nascimento">Data de Nascimento *</label>
-                                        <input type="date" id="nascimento" name="data_nascimento" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group grid-2">
-                                    <div>
-                                        <label for="cpf">CPF *</label>
-                                        <input type="text" id="cpf" name="cpf" pattern="\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}" placeholder="123.456.789-00" title="Digite no formato XXX.XXX.XXX-XX" required>
-                                    </div>
-                                    <div>
-                                        <label for="telefone">Telefone *</label>
-                                        <input type="tel" id="telefone" name="telefone" pattern="\\(\\d{2}\\) \\d{4,5}-\\d{4}" placeholder="(11) 98765-4321" title="Digite no formato (XX) XXXXX-XXXX" required>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <legend>Endereço</legend>
-                                
-                                <div class="form-group grid-2">
-                                    <div>
-                                        <label for="cep">CEP *</label>
-                                        <input type="text" id="cep" name="cep" pattern="\\d{5}-\\d{3}" placeholder="12345-000" title="Digite no formato XXXXX-XXX" required>
-                                    </div>
-                                    <div>
-                                        <label for="endereco">Endereço (Rua, N°) *</label>
-                                        <input type="text" id="endereco" name="endereco" required placeholder="Ex: Rua da Esperança, 123">
-                                    </div>
-                                </div>
-
-                                <div class="form-group grid-2">
-                                    <div>
-                                        <label for="cidade">Cidade *</label>
-                                        <input type="text" id="cidade" name="cidade" required placeholder="São Paulo">
-                                    </div>
-                                    <div>
-                                        <label for="estado">Estado *</label>
-                                        <select id="estado" name="estado" required>
-                                            <option value="">Selecione...</option>
-                                            <option value="SP">São Paulo</option>
-                                            <option value="RJ">Rio de Janeiro</option>
-                                            <option value="MG">Minas Gerais</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+                        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Nome Completo *</label>
+                                <input type="text" name="nome" class="form-control w-100" required style="padding: 10px; border-radius: 5px;">
                             </div>
+                            <div style="flex: 1; min-width: 300px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">CPF *</label>
+                                <input type="text" name="cpf" class="form-control w-100" placeholder="000.000.000-00" required style="padding: 10px; border-radius: 5px;">
+                            </div>
+                        </div>
 
-                        </form>
-                    </div>
+                        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 200px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Data de Nascimento</label>
+                                <input type="date" name="nascimento" class="form-control w-100" style="padding: 10px; border-radius: 5px;">
+                            </div>
+                            <div style="flex: 1; min-width: 200px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Telefone / WhatsApp</label>
+                                <input type="tel" name="telefone" class="form-control w-100" placeholder="(00) 00000-0000" style="padding: 10px; border-radius: 5px;">
+                            </div>
+                        </div>
+
+                        <h3 style="color: var(--cor-primaria); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px; margin-top: 30px;">2. Endereço</h3>
+                        
+                        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 150px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">CEP</label>
+                                <input type="text" name="cep" class="form-control w-100" placeholder="00000-000" style="padding: 10px; border-radius: 5px;">
+                            </div>
+                            <div style="flex: 3; min-width: 300px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Logradouro (Rua, Av.)</label>
+                                <input type="text" name="logradouro" class="form-control w-100" style="padding: 10px; border-radius: 5px;">
+                            </div>
+                        </div>
+
+                        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+                             <div style="flex: 1; min-width: 100px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Número</label>
+                                <input type="text" name="numero" class="form-control w-100" style="padding: 10px; border-radius: 5px;">
+                            </div>
+                            <div style="flex: 2; min-width: 200px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Bairro</label>
+                                <input type="text" name="bairro" class="form-control w-100" style="padding: 10px; border-radius: 5px;">
+                            </div>
+                            <div style="flex: 2; min-width: 200px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Cidade / UF</label>
+                                <input type="text" name="cidade" class="form-control w-100" style="padding: 10px; border-radius: 5px;">
+                            </div>
+                        </div>
+
+                        <h3 style="color: var(--cor-primaria); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px; margin-top: 30px;">3. Dados de Acesso</h3>
+
+                        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 300px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">E-mail de Login *</label>
+                                <input type="email" name="email" class="form-control w-100" required style="padding: 10px; border-radius: 5px;">
+                            </div>
+                        </div>
+
+                        <div class="row" style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+                            <div style="flex: 1; min-width: 250px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Senha *</label>
+                                <input type="password" name="senha" class="form-control w-100" required style="padding: 10px; border-radius: 5px;">
+                            </div>
+                            <div style="flex: 1; min-width: 250px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Confirmar Senha *</label>
+                                <input type="password" name="confirma_senha" class="form-control w-100" required style="padding: 10px; border-radius: 5px;">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 30px; margin-top: 20px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Sobre você (Habilidades e Interesses)</label>
+                            <textarea name="bio" rows="4" class="form-control w-100" placeholder="Conte um pouco sobre suas experiências..." style="padding: 10px; border-radius: 5px; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.2rem; background-color: var(--cor-primaria); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                            Finalizar Cadastro
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
